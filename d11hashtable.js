@@ -1,4 +1,4 @@
-let user ={
+let user = {
     age:54,
     name: 'Kylie',
     magic: true,

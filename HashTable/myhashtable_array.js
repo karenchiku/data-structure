@@ -2,14 +2,13 @@ class HashTable{
 
     constructor(size){
         this.data = new Array(size)
-
+        // [['grapes',10000]]
     }
-
+    //private function
     _hash(key){
         let hash = 0
         for( let i = 0; i < key.length; i++ ){
             hash = (hash + key.charCodeAt(i) * i ) % this.data.length
-           
         }
         return hash
     } 
@@ -41,17 +40,17 @@ class HashTable{
         return undefined
     }
     //O(1) normal case
-    //O(n) if the hash table is  collusion
+    //O(n) if the hash table is collusion
 
     keys(){
         const keyArray = []
         for(let i = 0; i < this.data.length; i++){
             if(this.data[i]){
                 keyArray.push(this.data[i][0][0])
-                console.log(this.data[i])
+                // console.log(this.data[i])
             }
         }
-        console.log(keyArray)
+        // console.log(keyArray)
         return keyArray
     }
 
@@ -79,9 +78,10 @@ class HashTable{
       }
 }
 
-const myHashTable = new HashTable(50)
+const myHashTable = new HashTable(4)
 myHashTable.set('grapes',10000)
 myHashTable.set('apples',43)
 myHashTable.set('oranges',23)
 // console.log(myHashTable.get('grapes'))
-myHashTable.keys()
+console.log(myHashTable.keys_more())
+console.log(myHashTable.keys())
